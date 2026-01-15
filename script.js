@@ -1,38 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const applyBtn = document.getElementById('applyBtn');
-    
-    applyBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Button loading effect
-        const originalText = this.textContent;
-        this.textContent = 'Applying...';
-        this.style.pointerEvents = 'none';
-        
-        // Simulate application process
-        setTimeout(() => {
-            this.textContent = originalText;
-            this.style.pointerEvents = 'auto';
-            
-            // Show demo alert
-            alert('🎉 Application started successfully!\n\nThis is a demo. In real app, redirect to form.');
-            
-            // Optional: Smooth scroll or other effects
-            document.querySelector('.hero').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        }, 1500);
+// Add to existing script.js
+if (document.querySelector('.vision-hero')) {
+    // Vision page animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
     });
-    
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.style.background = 'rgba(255,255,255,0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = 'white';
-            header.style.backdropFilter = 'none';
-        }
+
+    document.querySelectorAll('.value-card').forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
     });
-});
+}
