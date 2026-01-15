@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+header {
+    background: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #8B0000;
+    float: left;
+}
+
+.logo span {
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8B0000;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('grass-bg.jpg') center/cover; /* Add your grass background image here */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.content {
+    max-width: 900px;
+    padding: 20px;
+}
+
+.girl-img {
+    width: 220px;
+    height: 280px;
+    background: radial-gradient(circle at 35% 25%, #f5d7b8 0%, #e8b88a 40%, #d4a574 60%, #a67c52 80%);
+    border-radius: 50% 50% 40% 40%;
+    margin: 0 auto 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.girl-img::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 120px;
+    height: 160px;
+    background: linear-gradient(145deg, #4a2c0f, #2d1a0a);
+    border-radius: 50% 20% 50% 20%;
+    transform: rotate(-15deg);
+}
+
+h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+    line-height: 1.1;
+}
+
+.subheadline {
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-weight: 300;
+}
+
+.warning {
+    background: rgba(255,255,255,0.95);
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-container {
+    position: relative;
+    display: inline-block;
+}
+
+.btn {
+    background: linear-gradient(145deg, #8B0000, #a11212);
+    color: white;
+    padding: 18px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 6px 20px rgba(139,0,0,0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: linear-gradient(145deg, #a00000, #b82222);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139,0,0,0.5);
+}
+
+.laptop {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    width: 160px;
+    height: 110px;
+    background: linear-gradient(145deg, #f8f8f8, #e8e8e8);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.laptop::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 60px;
+    background: #333;
+    border-radius: 6px;
+}
+
+.backpack {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 90px;
+    height: 110px;
+    background: linear-gradient(145deg, #0066cc, #0044aa);
+    border-radius: 45px 45px 12px 12px;
+    box-shadow: 0 6px 20px rgba(0,68,170,0.4);
+}
+
+.backpack::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 60px;
+    height: 25px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+.apply-date {
+    margin-top: 40px;
+    font-size: 14px;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 20px 50px;
+    }
+    h1 { font-size: 38px; }
+    .subheadline { font-size: 26px; }
+    .girl-img { width: 180px; height: 230px; }
+    nav ul li { margin-left: 15px; }
+    .logo { font-size: 24px; }
+}
